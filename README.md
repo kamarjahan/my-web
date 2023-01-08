@@ -18,6 +18,7 @@
   <button type="submit">Sign In</button>
   <button type="button" onclick="location.href='/sign-up'">Sign Up</button>
 </form> 
+</script>
 
 
 
@@ -36,8 +37,7 @@
 
 
 
-
-<form action="/login" method="POST" onsubmit="return checkForm(this);">
+(none)<form action="/login" method="POST" onsubmit="return checkForm(this);">
   <label for="username">Username:</label><br>
   <input type="text" id="username" name="username"><br>
   <label for="password">Password:</label><br>
@@ -56,7 +56,8 @@
       return false;
     }
   }
-</script>
+(none)
+
 
 
 
