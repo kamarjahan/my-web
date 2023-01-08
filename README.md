@@ -8,6 +8,35 @@
 
 <!DOCTYPE html>
 
+
+
+<form action="/login" method="post">
+  <label for="username">Username:</label><br>
+  <input type="text" id="username" name="username"><br>
+  <label for="password">Password:</label><br>
+  <input type="password" id="password" name="password"><br><br>
+  <button type="submit">Log In</button>
+  <button type="button" onclick="location.href='/create-account'">Create Account</button>
+  <button type="button" onclick="location.href='/forgot-password'">Forgot Password</button>
+</form> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <form action="/login" method="POST" onsubmit="return checkForm(this);">
   <label for="username">Username:</label><br>
   <input type="text" id="username" name="username"><br>
