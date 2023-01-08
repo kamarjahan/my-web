@@ -10,15 +10,15 @@
 
 
 
-<form action="/login" method="post">
+<form action="/sign-in" method="post">
   <label for="username">Username:</label><br>
   <input type="text" id="username" name="username"><br>
   <label for="password">Password:</label><br>
   <input type="password" id="password" name="password"><br><br>
-  <button type="submit">Log In</button>
-  <button type="button" onclick="location.href='/create-account'">Create Account</button>
-  <button type="button" onclick="location.href='/forgot-password'">Forgot Password</button>
+  <button type="submit">Sign In</button>
+  <button type="button" onclick="location.href='/sign-up'">Sign Up</button>
 </form> 
+
 
 
 
