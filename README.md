@@ -1,8 +1,8 @@
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 
 <!DOCTYPE html>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 
 
@@ -35,6 +35,11 @@
   <p>This is the content of the side slide.</p>
 </div>
 
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  
+  
 <style>
   #side-slide {
     width: 300px;
