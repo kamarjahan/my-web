@@ -14,6 +14,8 @@
   <p>CLASS: VIII</p>
   <p>GITHUB PAGE: <a href="http://github.com/kamarjahan">KAMARJAHAN</a> </p>
   <p>HOBBY: MAKE PROGRAM AND OTHERS</p>
+  
+<button onclick="alert('<h1>Heading</h1><p>problem solves</p>')">how to cloce</button>
 
 <button onclick="window.location.href='https://github.com/kamarjahan/kamarjahan.github.io/edit/master/main.html'">main</button>
 
