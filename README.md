@@ -15,7 +15,7 @@
   <p>GITHUB PAGE: <a href="http://github.com/kamarjahan">KAMARJAHAN</a> </p>
   <p>HOBBY: MAKE PROGRAM AND OTHERS</p>
 
-<button onclick="window.location.href='https://www.example.com'">Click me</button>
+<button onclick="window.location.href='https://github.com/kamarjahan/kamarjahan.github.io/edit/master/main.html'">main</button>
 
 </body>
 </html>
