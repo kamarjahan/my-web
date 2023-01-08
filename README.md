@@ -14,9 +14,7 @@
   <p>CLASS: VIII</p>
   <p>GITHUB PAGE: <a href="http://github.com/kamarjahan">KAMARJAHAN</a> </p>
   <p>HOBBY: MAKE PROGRAM AND OTHERS</p>
-<a href="https://github.com/kamarjahan/kamarjahan.github.io/blob/master/main.html">
-  <button style="background-image: url(button-image.jpg); width: 200px; height: 50px;"></button>
-</a>
+<a href="https://www.example.com" class="button">Click me</a>
 
 </body>
 </html>
