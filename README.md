@@ -7,6 +7,8 @@
 </form> 
 
 <script>
+  
+<p style="display:none">
   function checkForm(form) {
     if (form.username.value == "1414" && form.password.value == "1234") {
       window.location.href = "/main.html";
@@ -17,7 +19,7 @@
       return false;
     }
   }
-  
+  </p>
 </script>
 
 
