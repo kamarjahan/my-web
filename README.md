@@ -16,7 +16,7 @@
   <label for="password">Password:</label><br>
   <input type="password" id="password" name="password"><br><br>
   <button type="submit">Sign In</button>
-  <button type="button" onclick="location.href='/sign-up'">Sign Up</button>
+  <button type="button" onclick="location.href='/signup.html'">Sign Up</button>
 </form> 
 </script>
 
