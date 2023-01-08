@@ -19,5 +19,30 @@
 
 <button onclick="window.location.href='https://github.com/kamarjahan/kamarjahan.github.io/edit/master/main.html'">main</button>
 
+
+<button id="slide-button">Toggle Slide</button>
+
+<div id="side-slide">
+  <h1>Side Slide</h1>
+  <p>This is the content of the side slide.</p>
+</div>
+
+<style>
+  #side-slide {
+    width: 300px;
+    height: 200px;
+    background-color: #ddd;
+    display: none;
+  }
+</style>
+
+<script>
+  $(document).ready(function() {
+    $("#slide-button").click(function() {
+      $("#side-slide").slideToggle();
+    });
+  });
+</script>
+
 </body>
 </html>
