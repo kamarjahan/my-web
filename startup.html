@@ -2,20 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title"></title>
+    <title>KAMARJAHAN SEARCH ENGINE</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="variables.js"></script> <!-- Include the JavaScript file -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8673570286288888"
-     crossorigin="anonymous"></script>
 </head>
 <body style="background-image: url('background.jpg'); background-size: cover;">
     <div class="container">
-        <h1 id="heading" style="color: red;"></h1>
+        <h1 id="heading" style="color: red;">KAMARJAHAN SEARCH ENGINE</h1>
         <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search the web..." onkeyup="searchOnEnter(event)">
+            <input type="text" id="search-input" placeholder="Search the web..." oninput="showSuggestions(this.value)">
             <a id="search-button" href="#" onclick="searchGoogle()">Search</a>
         </div>
+        <div id="suggestions"></div>
         <div class="google-services">
             <a href="https://www.youtube.com" class="service-button">
                 <img src="youtube-logo.png" alt="YouTube Logo">
@@ -34,21 +31,46 @@
                 Google
             </a>
         </div>
-        
-        <!-- Button to navigate to another HTML page -->
         <a href="another-page.html" class="nav-button">Go to Another Page</a>
     </div>
 
     <script>
-        var googleSearchURL = "https://www.google.com/search?q"; // Variable for Google search URL
+        var googleSearchURL = "https://www.google.com/search?q";
 
-        // Use the variables for the title and heading
-        document.getElementById("page-title").innerText = pageTitle;
-        document.getElementById("heading").innerText = headingText;
+        function showSuggestions(value) {
+            const suggestions = document.getElementById('suggestions');
+            suggestions.innerHTML = '';
 
-        function searchOnEnter(event) {
-            if (event.key === "Enter") {
-                searchGoogle();
+            if (value.length >= 3) {
+                const predefinedSuggestions = [
+                    { name: 'YouTube', logo: 'youtube-logo.png', link: 'https://www.youtube.com' },
+                    { name: 'Gmail', logo: 'gmail-logo.png', link: 'https://mail.google.com' },
+                    { name: 'Drive', logo: 'drive-logo.png', link: 'https://drive.google.com' },
+                    { name: 'Google', logo: 'google-logo.png', link: 'https://www.google.com' }
+                ];
+
+                predefinedSuggestions.forEach(suggestion => {
+                    if (suggestion.name.toLowerCase().includes(value.toLowerCase())) {
+                        const suggestionElement = document.createElement('a');
+                        suggestionElement.href = suggestion.link;
+                        suggestionElement.classList.add('suggestion');
+
+                        const logoImg = document.createElement('img');
+                        logoImg.src = suggestion.logo;
+                        logoImg.alt = suggestion.name + ' Logo';
+                        suggestionElement.appendChild(logoImg);
+
+                        const nameSpan = document.createElement('span');
+                        nameSpan.textContent = suggestion.name;
+                        suggestionElement.appendChild(nameSpan);
+
+                        suggestions.appendChild(suggestionElement);
+                    }
+                });
+
+                suggestions.style.display = 'block';
+            } else {
+                suggestions.style.display = 'none';
             }
         }
 
