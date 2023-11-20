@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent scrollbars caused by the background animation */
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('background.jpg') center/cover no-repeat; /* Adjust 'background.jpg' to your image file */
+    animation: backgroundAnimation 20s infinite alternate; /* Adjust animation duration as needed */
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+header {
+    background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent background for better readability */
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+    z-index: 1; /* Ensure header is above the background */
+}
+
+h1 {
+    margin: 0;
+    color: red; /* Change text color to red */
+    animation: textAnimation 2s infinite alternate; /* Add text animation */
+}
+
+@keyframes textAnimation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+section {
+    margin: 20px;
+    color: #fff; /* Adjust text color for better readability on the background */
+}
+
+footer {
+    background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent background for better readability */
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1; /* Ensure footer is above the background */
+}
+
+/* Add more styling as needed */

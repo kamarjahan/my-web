@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles specific to the index.html page */
+        .user-info {
+            position: fixed;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #fff;
+            text-align: right;
+        }
+
+        .logout-button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .logout-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background"></div>
+
+    <!-- User info will be displayed here -->
+    <div class="user-info"></div>
+
+    <header>
+        <h1>Kamar Jahan</h1>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p><strong>Place:</strong> Pallikere</p>
+        <p><strong>Age:</strong> 16</p>
+        <p><strong>School:</strong> Islamic School</p>
+        <p><strong>District:</strong> Kasaragod</p>
+        <p><strong>State:</strong> Kerala</p>
+        <p><strong>Country:</strong> India</p>
+    </section>
+
+    <!-- Add more sections for your portfolio, projects, skills, etc. -->
+
+    <footer>
+        <p class="logout-button" onclick="logout()">Log Out</p>
+        <p>&copy; 2023 Kamar Jahan - Portfolio</p>
+    </footer>
+
+    <script src="index-script.js"></script>
+</body>
+
+</html>
