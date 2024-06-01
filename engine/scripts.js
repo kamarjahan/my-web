@@ -6,6 +6,7 @@ var headingText = "KAMARJAHAN SEARCH ENGINE";
 
 // Set the page title and heading text
 document.title = pageTitle;
+document.getElementById('page-title').innerText = pageTitle;
 document.getElementById('heading').innerText = headingText;
 
 function showSuggestions(value) {
