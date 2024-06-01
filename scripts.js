@@ -6,7 +6,6 @@ var headingText = "KAMARJAHAN SEARCH ENGINE";
 
 // Set the page title and heading text
 document.title = pageTitle;
-document.getElementById('page-title').innerText = pageTitle;
 document.getElementById('heading').innerText = headingText;
 
 function showSuggestions(value) {
@@ -15,27 +14,26 @@ function showSuggestions(value) {
 
     if (value.length >= 3) {
         const predefinedSuggestions = [
-            { name: 'YouTube', logo: 'youtube-logo.png', link: 'https://www.youtube.com' },
-            { name: 'Gmail', logo: 'gmail-logo.png', link: 'https://mail.google.com' },
-            { name: 'Drive', logo: 'drive-logo.png', link: 'https://drive.google.com' },
-            { name: 'Google', logo: 'google-logo.png', link: 'https://www.google.com' }
+            'YouTube',
+            'Gmail',
+            'Drive',
+            'Google',
+            'Google Maps',
+            'Google Translate',
+            'Google News',
+            'Google Photos',
+            'Google Calendar'
         ];
 
         predefinedSuggestions.forEach(suggestion => {
-            if (suggestion.name.toLowerCase().includes(value.toLowerCase())) {
-                const suggestionElement = document.createElement('a');
-                suggestionElement.href = suggestion.link;
+            if (suggestion.toLowerCase().includes(value.toLowerCase())) {
+                const suggestionElement = document.createElement('div');
                 suggestionElement.classList.add('suggestion');
-
-                const logoImg = document.createElement('img');
-                logoImg.src = suggestion.logo;
-                logoImg.alt = suggestion.name + ' Logo';
-                suggestionElement.appendChild(logoImg);
-
-                const nameSpan = document.createElement('span');
-                nameSpan.textContent = suggestion.name;
-                suggestionElement.appendChild(nameSpan);
-
+                suggestionElement.textContent = suggestion;
+                suggestionElement.onclick = () => {
+                    document.getElementById('search-input').value = suggestion;
+                    suggestions.style.display = 'none';
+                };
                 suggestions.appendChild(suggestionElement);
             }
         });
