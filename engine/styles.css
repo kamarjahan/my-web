@@ -6,7 +6,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 150vh; /* Ensure the body takes the full height of the viewport */
+    height: 100vh; /* Ensure the body takes the full height of the viewport */
     display: flex;
     justify-content: center; /* Center the container horizontally */
     align-items: center; /* Center the container vertically */
@@ -17,7 +17,7 @@ body {
     padding: 20px;
     background: rgba(255, 255, 255, 0.8);
     max-width: 800px;
-    margin: 0 auto;
+    width: 90%; /* Make sure it fits well on smaller screens */
     border-radius: 8px;
 }
 
@@ -29,6 +29,8 @@ h1 {
 
 .search-container {
     margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Center the search container */
 }
 
 #search-input {
@@ -48,6 +50,9 @@ h1 {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    text-decoration: none; /* Ensure it's styled as a button */
+    display: flex;
+    align-items: center; /* Center the text vertically */
 }
 
 #search-button:hover {
