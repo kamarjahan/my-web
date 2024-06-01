@@ -8,8 +8,8 @@
 <body>
     <div class="header">
         <div class="auth-buttons">
-            <a href="signin.html" class="auth-button">Sign In</a>
-            <a href="signup.html" class="auth-button">Sign Up</a>
+            <a href="#" class="auth-button" onclick="showSignIn()">Sign In</a>
+            <a href="#" class="auth-button" onclick="showSignUp()">Sign Up</a>
         </div>
     </div>
     <div class="container">
@@ -38,6 +38,28 @@
             </a>
         </div>
         <a href="another-page.html" class="nav-button">Go to Another Page</a>
+    </div>
+
+    <div id="sign-in-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('sign-in-modal')">&times;</span>
+            <h2>Sign In</h2>
+            <input type="email" id="sign-in-email" placeholder="Email" required>
+            <input type="password" id="sign-in-password" placeholder="Password" required>
+            <button onclick="signIn()">Sign In</button>
+            <p id="sign-in-message"></p>
+        </div>
+    </div>
+
+    <div id="sign-up-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('sign-up-modal')">&times;</span>
+            <h2>Sign Up</h2>
+            <input type="email" id="sign-up-email" placeholder="Email" required>
+            <input type="password" id="sign-up-password" placeholder="Password" required>
+            <button onclick="signUp()">Sign Up</button>
+            <p id="sign-up-message"></p>
+        </div>
     </div>
 
     <script src="scripts.js"></script>
