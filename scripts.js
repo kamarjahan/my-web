@@ -61,7 +61,9 @@ function signUp() {
         localStorage.setItem(email, password);
         messageElement.textContent = 'Sign Up Successful!';
         messageElement.style.color = 'green';
-        window.location.href = 'sign-in.html'; // Redirect to sign-in page after successful sign-up
+        setTimeout(() => {
+            window.location.href = 'sign-in.html'; // Redirect to sign-in page after successful sign-up
+        }, 1000);
     } else {
         messageElement.textContent = 'Please fill in all fields.';
         messageElement.style.color = 'red';
@@ -80,7 +82,9 @@ function signIn() {
         sessionStorage.setItem('loggedInUser', email); // Store login status in sessionStorage
         messageElement.textContent = 'Sign In Successful!';
         messageElement.style.color = 'green';
-        window.location.href = 'index.html'; // Redirect to main page after successful sign-in
+        setTimeout(() => {
+            window.location.href = 'index.html'; // Redirect to main page after successful sign-in
+        }, 1000);
     } else {
         messageElement.textContent = 'Incorrect email or password.';
         messageElement.style.color = 'red';
