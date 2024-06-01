@@ -51,6 +51,11 @@ function searchGoogle() {
     }
 }
 
+// Function to generate a 6-digit personal ID
+function generatePersonalID() {
+    return Math.floor(100000 + Math.random() * 900000).toString();
+}
+
 // Function to sign up
 function signUp() {
     const email = document.getElementById('sign-up-email').value;
@@ -58,7 +63,9 @@ function signUp() {
     const messageElement = document.getElementById('sign-up-message');
 
     if (email && password) {
-        localStorage.setItem(email, password);
+        const personalID = generatePersonalID();
+        const userData = { email: email, password: password, personalID: personalID };
+        localStorage.setItem(email, JSON.stringify(userData));
         messageElement.textContent = 'Sign Up Successful!';
         messageElement.style.color = 'green';
         setTimeout(() => {
@@ -76,9 +83,9 @@ function signIn() {
     const password = document.getElementById('sign-in-password').value;
     const messageElement = document.getElementById('sign-in-message');
 
-    const storedPassword = localStorage.getItem(email);
+    const storedData = JSON.parse(localStorage.getItem(email));
 
-    if (storedPassword === password) {
+    if (storedData && storedData.password === password) {
         sessionStorage.setItem('loggedInUser', email); // Store login status in sessionStorage
         messageElement.textContent = 'Sign In Successful!';
         messageElement.style.color = 'green';
@@ -98,9 +105,11 @@ function checkLoginStatus() {
     const userInfo = document.getElementById('user-info');
 
     if (loggedInUser) {
+        const userData = JSON.parse(localStorage.getItem(loggedInUser));
         authButtons.style.display = 'none';
         userInfo.style.display = 'block';
-        document.getElementById('user-email').textContent = `Welcome, ${loggedInUser}`;
+        document.getElementById('user-email').textContent = `Welcome, ${userData.email}`;
+        document.getElementById('user-id').textContent = `Personal ID: ${userData.personalID}`;
     } else {
         authButtons.style.display = 'flex';
         userInfo.style.display = 'none';
