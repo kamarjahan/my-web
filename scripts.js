@@ -1,8 +1,4 @@
-// Define your variables here
-var welcomeMessage = "KAMARJAHAN SEARCH ENGINE";
 var googleSearchURL = "https://www.google.com/search?q=";
-var pageTitle = "KAMARJAHAN SEARCH ENGINE";
-var headingText = "KAMARJAHAN SEARCH ENGINE";
 
 // Function to show search suggestions
 function showSuggestions(value) {
@@ -65,6 +61,7 @@ function signUp() {
         localStorage.setItem(email, password);
         messageElement.textContent = 'Sign Up Successful!';
         messageElement.style.color = 'green';
+        window.location.href = 'sign-in.html'; // Redirect to sign-in page after successful sign-up
     } else {
         messageElement.textContent = 'Please fill in all fields.';
         messageElement.style.color = 'red';
@@ -80,10 +77,34 @@ function signIn() {
     const storedPassword = localStorage.getItem(email);
 
     if (storedPassword === password) {
+        sessionStorage.setItem('loggedInUser', email); // Store login status in sessionStorage
         messageElement.textContent = 'Sign In Successful!';
         messageElement.style.color = 'green';
+        window.location.href = 'index.html'; // Redirect to main page after successful sign-in
     } else {
         messageElement.textContent = 'Incorrect email or password.';
         messageElement.style.color = 'red';
     }
+}
+
+// Function to check login status
+function checkLoginStatus() {
+    const loggedInUser = sessionStorage.getItem('loggedInUser');
+    const authButtons = document.getElementById('auth-buttons');
+    const userInfo = document.getElementById('user-info');
+
+    if (loggedInUser) {
+        authButtons.style.display = 'none';
+        userInfo.style.display = 'block';
+        document.getElementById('user-email').textContent = `Welcome, ${loggedInUser}`;
+    } else {
+        authButtons.style.display = 'flex';
+        userInfo.style.display = 'none';
+    }
+}
+
+// Function to sign out
+function signOut() {
+    sessionStorage.removeItem('loggedInUser');
+    window.location.href = 'index.html'; // Redirect to main page after sign-out
 }
