@@ -6,10 +6,10 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; /* Ensure the body takes the full height of the viewport */
+    height: 100vh;
     display: flex;
-    justify-content: center; /* Center the container horizontally */
-    align-items: center; /* Center the container vertically */
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -17,7 +17,7 @@ body {
     padding: 20px;
     background: rgba(255, 255, 255, 0.8);
     max-width: 800px;
-    width: 90%; /* Make sure it fits well on smaller screens */
+    width: 90%;
     border-radius: 8px;
 }
 
@@ -30,7 +30,8 @@ h1 {
 .search-container {
     margin-top: 20px;
     display: flex;
-    justify-content: center; /* Center the search container */
+    justify-content: center;
+    position: relative;
 }
 
 #search-input {
@@ -50,9 +51,9 @@ h1 {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    text-decoration: none; /* Ensure it's styled as a button */
+    text-decoration: none;
     display: flex;
-    align-items: center; /* Center the text vertically */
+    align-items: center;
 }
 
 #search-button:hover {
@@ -94,14 +95,18 @@ h1 {
 /* Suggestions Styles */
 #suggestions {
     text-align: left;
-    margin-top: 10px;
     background: #fff;
     border: 1px solid #ccc;
     border-radius: 4px;
     max-width: 320px;
-    margin: 10px auto;
+    width: 100%;
+    position: absolute;
+    top: 45px; /* Adjust based on the height of your input field */
+    left: 0;
+    z-index: 1000;
     display: none;
     padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .suggestion {
