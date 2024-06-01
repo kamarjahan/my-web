@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="page-title"></title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="heading"></h1>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search the web..." oninput="showSuggestions(this.value)">
+            <a id="search-button" href="#" onclick="searchGoogle()">Search</a>
+        </div>
+        <div id="suggestions"></div>
+        <div class="google-services">
+            <a href="https://www.youtube.com" class="service-button">
+                <img src="youtube-logo.png" alt="YouTube Logo">
+                YouTube
+            </a>
+            <a href="https://mail.google.com" class="service-button">
+                <img src="gmail-logo.png" alt="Gmail Logo">
+                Gmail
+            </a>
+            <a href="https://drive.google.com" class="service-button">
+                <img src="drive-logo.png" alt="Google Drive Logo">
+                Drive
+            </a>
+            <a href="https://www.google.com" class="service-button">
+                <img src="google-logo.png" alt="Google Logo">
+                Google
+            </a>
+        </div>
+        <a href="another-page.html" class="nav-button">Go to Another Page</a>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
