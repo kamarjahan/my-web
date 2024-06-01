@@ -4,57 +4,6 @@ var googleSearchURL = "https://www.google.com/search?q=";
 var pageTitle = "KAMARJAHAN SEARCH ENGINE";
 var headingText = "KAMARJAHAN SEARCH ENGINE";
 
-// Set the page title and heading text
-document.title = pageTitle;
-document.getElementById('heading').innerText = headingText;
-
-// Functions to show modals
-function showSignIn() {
-    document.getElementById('sign-in-modal').style.display = 'flex';
-}
-
-function showSignUp() {
-    document.getElementById('sign-up-modal').style.display = 'flex';
-}
-
-// Function to close modals
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = 'none';
-}
-
-// Function to sign up
-function signUp() {
-    const email = document.getElementById('sign-up-email').value;
-    const password = document.getElementById('sign-up-password').value;
-    const messageElement = document.getElementById('sign-up-message');
-
-    if (email && password) {
-        localStorage.setItem(email, password);
-        messageElement.textContent = 'Sign Up Successful!';
-        messageElement.style.color = 'green';
-    } else {
-        messageElement.textContent = 'Please fill in all fields.';
-        messageElement.style.color = 'red';
-    }
-}
-
-// Function to sign in
-function signIn() {
-    const email = document.getElementById('sign-in-email').value;
-    const password = document.getElementById('sign-in-password').value;
-    const messageElement = document.getElementById('sign-in-message');
-
-    const storedPassword = localStorage.getItem(email);
-
-    if (storedPassword === password) {
-        messageElement.textContent = 'Sign In Successful!';
-        messageElement.style.color = 'green';
-    } else {
-        messageElement.textContent = 'Incorrect email or password.';
-        messageElement.style.color = 'red';
-    }
-}
-
 // Function to show search suggestions
 function showSuggestions(value) {
     const suggestions = document.getElementById('suggestions');
@@ -101,7 +50,40 @@ function searchGoogle() {
         alert('Search is empty. Please enter a search query.');
     } else {
         const searchQuery = encodeURIComponent(searchInput);
-        const fullGoogleSearchURL = `${googleSearchURL}=${searchQuery}`;
+        const fullGoogleSearchURL = `${googleSearchURL}${searchQuery}`;
         window.location.href = fullGoogleSearchURL;
+    }
+}
+
+// Function to sign up
+function signUp() {
+    const email = document.getElementById('sign-up-email').value;
+    const password = document.getElementById('sign-up-password').value;
+    const messageElement = document.getElementById('sign-up-message');
+
+    if (email && password) {
+        localStorage.setItem(email, password);
+        messageElement.textContent = 'Sign Up Successful!';
+        messageElement.style.color = 'green';
+    } else {
+        messageElement.textContent = 'Please fill in all fields.';
+        messageElement.style.color = 'red';
+    }
+}
+
+// Function to sign in
+function signIn() {
+    const email = document.getElementById('sign-in-email').value;
+    const password = document.getElementById('sign-in-password').value;
+    const messageElement = document.getElementById('sign-in-message');
+
+    const storedPassword = localStorage.getItem(email);
+
+    if (storedPassword === password) {
+        messageElement.textContent = 'Sign In Successful!';
+        messageElement.style.color = 'green';
+    } else {
+        messageElement.textContent = 'Incorrect email or password.';
+        messageElement.style.color = 'red';
     }
 }
