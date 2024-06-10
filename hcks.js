@@ -1,14 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('security-test-form');
-    const resultsSection = document.getElementById('results');
-    const resultMessage = document.getElementById('result-message');
+    const form = document.getElementById('hack-form');
+    const loadingSection = document.getElementById('loading');
+    const hackSection = document.querySelector('section');
+    const usernameInput = document.getElementById('username');
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
-        const username = document.getElementById('username').value;
-        
-        // Simulating a security test
-        resultsSection.style.display = 'block';
-        resultMessage.textContent = `Security test for username "${username}" completed. No vulnerabilities found.`;
+        hackSection.style.display = 'none';
+        loadingSection.style.display = 'block';
+
+        setTimeout(() => {
+            window.location.href = 'anhck.html?username=' + encodeURIComponent(usernameInput.value);
+        }, 10000); // 10 seconds
     });
 });
