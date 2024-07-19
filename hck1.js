@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loadingSection.style.display = 'flex';
 
         setTimeout(() => {
-            window.location.href = 'https://payments.cashfree.com/forms/hckammu';
+            window.location.href = "https://payments.cashfree.com/forms/hckammu";
         }, 10000); // 10 seconds
     });
 });
