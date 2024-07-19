@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loadingSection.style.display = 'flex';
 
         setTimeout(() => {
-            window.location.href = 'anhck.html?username=';
+            window.location.href = 'payments.cashfree.com/forms/donateme';
         }, 10000); // 10 seconds
     });
 });
